@@ -30,7 +30,7 @@ struct ContentView: View {
         }
         .navigationSplitViewStyle(.balanced)
         .onChange(of: selectedObject) { _, newValue in
-            if SettingsManager.shared.settings.historyEnabled {
+            if SettingsManager.shared.preferences.historyEnabled {
                 historyManager.addObject(newValue)
             }
         }
@@ -76,6 +76,9 @@ private struct _ContentView: View {
             .navigationDestination(for: NamedNode.self) { namedNode in
                 if namedNode.isLeaf {
                     ImageRuntimeObjectsView(namedNode: namedNode, selection: $selectedObject)
+                        .onAppear {
+                            assignLeafNode(namedNode.name)
+                        }
                 } else {
                     NamedNodeRow(node: namedNode)
                         .environmentObject(RuntimeListings.shared)
@@ -95,5 +98,12 @@ private struct _ContentView: View {
             }
             .buttonStyle(.plain)
         }
+    }
+    
+    func assignLeafNode(_ node: String) {
+        if BookmarkManager.lastLeafNode == node { return }
+        
+        let suffix = node.hasSuffix(".dylib") ? "" : ".framework"
+        BookmarkManager.lastLeafNode = node + suffix
     }
 }

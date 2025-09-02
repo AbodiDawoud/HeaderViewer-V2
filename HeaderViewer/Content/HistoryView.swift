@@ -45,7 +45,7 @@ struct HistoryView: View {
                 }
             }
         }
-        .if(settingsManager.settings.historyBadgeEnabled) {
+        .if(settingsManager.preferences.historyBadgeEnabled) {
             $0.badge(manager.historyCount)
         }
         .animation(.default, value: manager.historyItems) // Animate "onDelete" action
@@ -54,7 +54,7 @@ struct HistoryView: View {
     
     @ViewBuilder
     private var historyStatusView: some View {
-        if settingsManager.settings.historyEnabled {
+        if settingsManager.preferences.historyEnabled {
             Label("No History Yet", systemImage: "clock.arrow.circlepath")
                 .labelStyle(HistoryStatusLabelStyle(.flora, info: "Explore new objects to see them here."))
         } else {

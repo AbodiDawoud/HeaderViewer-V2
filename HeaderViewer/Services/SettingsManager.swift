@@ -10,7 +10,7 @@ class SettingsManager: ObservableObject {
     
     private let defaults = UserDefaults.standard
     private let settingsKey = "appSettings" // The used key to save user preferences in UserDefaults
-    @Published var settings: AppSettings {
+    @Published var preferences: AppSettings {
         didSet { saveSettings() }
     }
     
@@ -22,17 +22,17 @@ class SettingsManager: ObservableObject {
               let decodedSettings = try? JSONDecoder().decode(AppSettings.self, from: savedData)
         else {
             // When the app starts for the first time, register and then save default values
-            self.settings = Self.registerDefaultSettings()
+            self.preferences = Self.registerDefaultSettings()
             saveSettings()
             return
         }
         
-        self.settings = decodedSettings
+        self.preferences = decodedSettings
     }
     
     
     private func saveSettings() {
-        let encodedData = try? JSONEncoder().encode(settings)
+        let encodedData = try? JSONEncoder().encode(preferences)
         defaults.set(encodedData, forKey: settingsKey)
     }
     

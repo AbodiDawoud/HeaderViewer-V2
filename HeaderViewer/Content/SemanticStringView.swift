@@ -8,13 +8,14 @@ import ClassDumpRuntime
 
 struct SemanticStringView: View {
     @ObservedObject var preferences = CodePreferences.shared
+    @ObservedObject var bookmarkManager = BookmarkManager.shared
+    
     let semanticString: CDSemanticString
     let fileName: String
     
     
     private let lines: [SemanticLine]
     private let longestLineIndex: Int?
-    
     
     init(_ semanticString: CDSemanticString, fileName: String) {
         self.semanticString = semanticString
@@ -73,7 +74,11 @@ struct SemanticStringView: View {
             Button("Search Web", systemImage: "magnifyingglass.circle", action: searchOnSafari)
             
             Divider()
-            
+            Button(
+                bookmarked ? "Un-Bookmark" : "Bookmark",
+                systemImage: bookmarked ? "bookmark.slash" : "bookmark",
+                action: toggleBookmark
+            )
             Button("Save", systemImage: "arrow.down.document", action: saveFileContent)
             Button("Share", systemImage: "square.and.arrow.up", action: presentActivityViewController)
         }
@@ -140,6 +145,14 @@ struct SemanticStringView: View {
         
         let controller = UIActivityViewController(activityItems: [tempUrl], applicationActivities: nil)
         keyWindow.rootViewController!.present(controller, animated: true)
+    }
+    
+    func toggleBookmark() {
+        bookmarkManager.toggleBookmark(for: fileName)
+    }
+    
+    var bookmarked: Bool {
+        return bookmarkManager.isBookmarked(fileName)
     }
 }
 

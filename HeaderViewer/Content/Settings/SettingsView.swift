@@ -38,20 +38,20 @@ struct SettingsView: View {
                     Toggle(
                         "History Enabled",
                         systemImage: "clock.arrow.circlepath",
-                        isOn: $manager.settings.historyEnabled.animation()
+                        isOn: $manager.preferences.historyEnabled.animation()
                     )
                     .labelStyle(IconicLabelStyle(Color(red: 0.92549, green: 0.411765, blue: 0.505882)))
                     
-                    if manager.settings.historyEnabled {
+                    if manager.preferences.historyEnabled {
                         Toggle(
                             "Badge Enabled",
                             image: .dotsNeedleBottom100Percent,
-                            isOn: $manager.settings.historyBadgeEnabled.animation()
+                            isOn: $manager.preferences.historyBadgeEnabled.animation()
                         )
                         .labelStyle(IconicLabelStyle(Color(red: 0.352941, green: 0.619608, blue: 0.729412)))
                         
-                        Stepper(value: $manager.settings.historyLimit.animation(), in: 0...100, step: 10) {
-                            let limit = manager.settings.historyLimit == 0 ? "Unlimited" : String(manager.settings.historyLimit)
+                        Stepper(value: $manager.preferences.historyLimit.animation(), in: 0...100, step: 10) {
+                            let limit = manager.preferences.historyLimit == 0 ? "Unlimited" : String(manager.preferences.historyLimit)
                             
                             HStack(spacing: 0) {
                                 Label("Limit: ", systemImage: "number")

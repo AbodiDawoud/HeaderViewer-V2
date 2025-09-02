@@ -10,7 +10,7 @@ struct AppearancePopoverView: View {
     
     
     var appAppearance: String {
-        settingsManager.settings.preferredColorScheme
+        settingsManager.preferences.preferredColorScheme
     }
     
     var body: some View {
@@ -37,13 +37,13 @@ struct AppearancePopoverView: View {
         .init {
             return appAppearance == "nil"
         } set: {
-            settingsManager.settings.preferredColorScheme = $0 ? "nil" : "dark"
+            settingsManager.preferences.preferredColorScheme = $0 ? "nil" : "dark"
         }
     }
     
     private func colorSchemeButton(_ scheme: String) -> some View {
         Button {
-            settingsManager.settings.preferredColorScheme = scheme
+            settingsManager.preferences.preferredColorScheme = scheme
         } label: {
             VStack(spacing: 15) {
                 ZStack {

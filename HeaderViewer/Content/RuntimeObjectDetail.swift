@@ -86,28 +86,20 @@ struct RuntimeObjectDetail: View {
 
 fileprivate struct FontToolbarItem: View {
     @ObservedObject private var preferences = CodePreferences.shared
-
-
-    private var smallerButton: some View {
-        Button("Smaller", systemImage: "textformat.size.smaller") {
-            guard preferences.fontSize > preferences.minFontSize else { return }
-            preferences.fontSize -= 1
-        }
-    }
-    
-    private var largerButton: some View {
-        Button("Larger", systemImage: "textformat.size.larger") {
-            guard preferences.fontSize < preferences.maxFontSize else { return }
-            preferences.fontSize += 1
-        }
-    }
-    
     
     var body: some View {
         ControlGroup("Font Size", systemImage: "textformat.size") {
-            smallerButton
+            Button("Smaller", systemImage: "textformat.size.smaller") {
+                guard preferences.fontSize > preferences.minFontSize else { return }
+                preferences.fontSize -= 1
+            }
+            
             Text(preferences.fontSize.formatted(.number))
-            largerButton
+            
+            Button("Larger", systemImage: "textformat.size.larger") {
+                guard preferences.fontSize < preferences.maxFontSize else { return }
+                preferences.fontSize += 1
+            }
         }
         .controlGroupStyle(.compactMenu)
         .menuActionDismissBehavior(.disabled)

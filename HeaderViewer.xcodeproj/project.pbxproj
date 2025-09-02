@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD05A3CB2E668DDB00FD2BFA /* BookmarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD05A3CA2E668DDB00FD2BFA /* BookmarManager.swift */; };
 		BD1C10E62E1D9FAD00810CB4 /* Lilex-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD1C10E42E1D9FAD00810CB4 /* Lilex-Regular.ttf */; };
 		BD1C10E72E1D9FAD00810CB4 /* FiraCode-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD1C10E22E1D9FAD00810CB4 /* FiraCode-Regular.ttf */; };
 		BD1C10E82E1D9FAD00810CB4 /* ConsolaVD3-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD1C10E12E1D9FAD00810CB4 /* ConsolaVD3-Regular.ttf */; };
@@ -56,6 +57,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BD05A3CA2E668DDB00FD2BFA /* BookmarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarManager.swift; sourceTree = "<group>"; };
 		BD1C10E12E1D9FAD00810CB4 /* ConsolaVD3-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ConsolaVD3-Regular.ttf"; sourceTree = "<group>"; };
 		BD1C10E22E1D9FAD00810CB4 /* FiraCode-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraCode-Regular.ttf"; sourceTree = "<group>"; };
 		BD1C10E32E1D9FAD00810CB4 /* JetBrainsMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JetBrainsMono-Regular.ttf"; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				C02164D02D658F1D007FB6E5 /* CodePreferences.swift */,
 				C045C6AD2D8B85C2008682CE /* HistoryManager.swift */,
 				C045C6AF2D8B86D7008682CE /* SettingsManager.swift */,
+				BD05A3CA2E668DDB00FD2BFA /* BookmarManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			files = (
 				C045C6B22D8B8721008682CE /* SettingsView.swift in Sources */,
 				FA6BEDCB2BD5941500D20C6F /* RuntimeObjectsList.swift in Sources */,
+				BD05A3CB2E668DDB00FD2BFA /* BookmarManager.swift in Sources */,
 				FAAA8C0F2B85788700BD85B4 /* ImageRuntimeObjectsView.swift in Sources */,
 				BDDD7E622E19F1FE0098A102 /* View+.swift in Sources */,
 				C045C6AE2D8B85C2008682CE /* HistoryManager.swift in Sources */,

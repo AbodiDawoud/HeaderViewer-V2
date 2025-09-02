@@ -33,10 +33,10 @@ private struct _HomeView: View {
                 Label("Settings", systemImage: "gear")
             }
         }
-        .preferredColorScheme(settingsManager.settings.colorScheme())
+        .preferredColorScheme(settingsManager.preferences.colorScheme())
         .onAppear(perform: setTabBarAppearance)
         .onChange(
-            of: settingsManager.settings.preferredColorScheme,
+            of: settingsManager.preferences.preferredColorScheme,
             CodePreferences.shared.toggleThemeBasedOnColorScheme
         )
     }

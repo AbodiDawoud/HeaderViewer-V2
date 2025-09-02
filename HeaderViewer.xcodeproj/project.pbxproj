@@ -11,7 +11,7 @@
 		BD1C10E72E1D9FAD00810CB4 /* FiraCode-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD1C10E22E1D9FAD00810CB4 /* FiraCode-Regular.ttf */; };
 		BD1C10E82E1D9FAD00810CB4 /* ConsolaVD3-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD1C10E12E1D9FAD00810CB4 /* ConsolaVD3-Regular.ttf */; };
 		BD1C10E92E1D9FAD00810CB4 /* JetBrainsMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD1C10E32E1D9FAD00810CB4 /* JetBrainsMono-Regular.ttf */; };
-		BD521C662E18AE33000F1E35 /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD521C652E18AE33000F1E35 /* ColorTheme.swift */; };
+		BD521C662E18AE33000F1E35 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD521C652E18AE33000F1E35 /* Theme.swift */; };
 		BD6D845B2E0B6D4500842F22 /* CodeAppearanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6D845A2E0B6D4500842F22 /* CodeAppearanceView.swift */; };
 		BD6D845D2E0B787400842F22 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD6D845C2E0B787400842F22 /* Colors.xcassets */; };
 		BD6D845F2E0BA54800842F22 /* IconicLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6D845E2E0BA54800842F22 /* IconicLabelStyle.swift */; };
@@ -60,7 +60,7 @@
 		BD1C10E22E1D9FAD00810CB4 /* FiraCode-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraCode-Regular.ttf"; sourceTree = "<group>"; };
 		BD1C10E32E1D9FAD00810CB4 /* JetBrainsMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JetBrainsMono-Regular.ttf"; sourceTree = "<group>"; };
 		BD1C10E42E1D9FAD00810CB4 /* Lilex-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lilex-Regular.ttf"; sourceTree = "<group>"; };
-		BD521C652E18AE33000F1E35 /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
+		BD521C652E18AE33000F1E35 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		BD6D845A2E0B6D4500842F22 /* CodeAppearanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeAppearanceView.swift; sourceTree = "<group>"; };
 		BD6D845C2E0B787400842F22 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		BD6D845E2E0BA54800842F22 /* IconicLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconicLabelStyle.swift; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 				FA9687E82B8338E100123476 /* NamedNode.swift */,
 				FA9687EA2B833C1700123476 /* RuntimeObjectType.swift */,
 				BDA6F6BB2E08944500C000D6 /* RuntimeTypeSearchScope.swift */,
-				BD521C652E18AE33000F1E35 /* ColorTheme.swift */,
+				BD521C652E18AE33000F1E35 /* Theme.swift */,
 				BDDD7E632E19F7350098A102 /* SemanticColor.swift */,
 			);
 			path = Models;
@@ -320,7 +320,7 @@
 				C045C6B02D8B86D7008682CE /* SettingsManager.swift in Sources */,
 				C0D81D372D645422005358AD /* RuntimeObjectsViewModel.swift in Sources */,
 				FA9687EB2B833C1700123476 /* RuntimeObjectType.swift in Sources */,
-				BD521C662E18AE33000F1E35 /* ColorTheme.swift in Sources */,
+				BD521C662E18AE33000F1E35 /* Theme.swift in Sources */,
 				BDA6F6BC2E08944500C000D6 /* RuntimeTypeSearchScope.swift in Sources */,
 				C02164D12D658F1D007FB6E5 /* CodePreferences.swift in Sources */,
 				BD6D845B2E0B6D4500842F22 /* CodeAppearanceView.swift in Sources */,

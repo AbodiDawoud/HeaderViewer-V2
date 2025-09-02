@@ -8,118 +8,43 @@ import ClassDumpRuntime
 
 
 struct SemanticColor {
-    var standard: Color {
-        get {
-            value(ColorTheme.system.standard, forKey: CDSemanticType.standard.key)
-        }
-        
-        set {
-            setValue(newValue, forKey: CDSemanticType.standard.key)
-        }
-    }
+    @ThemedColor(Theme.system.standard, key: CDSemanticType.standard.key)
+    var standard: Color
     
     
-    var comment: Color {
-        get {
-            value(ColorTheme.system.comment, forKey: CDSemanticType.comment.key)
-        }
-        
-        set {
-            setValue(newValue, forKey: CDSemanticType.comment.key)
-        }
-    }
+    @ThemedColor(Theme.system.comment, key: CDSemanticType.comment.key)
+    var comment: Color
     
     
-    var keyword: Color {
-        get {
-            value(ColorTheme.system.keyword, forKey: CDSemanticType.keyword.key)
-        }
-        
-        set {
-            setValue(newValue, forKey: CDSemanticType.keyword.key)
-        }
-    }
+    @ThemedColor(Theme.system.keyword, key: CDSemanticType.keyword.key)
+    var keyword: Color
     
     
-    var variable: Color {
-        get {
-            value(ColorTheme.system.variable, forKey: CDSemanticType.variable.key)
-        }
-        
-        set {
-            setValue(newValue, forKey: CDSemanticType.variable.key)
-        }
-    }
+    @ThemedColor(Theme.system.variable, key: CDSemanticType.variable.key)
+    var variable: Color
     
     
-    var number: Color {
-        get {
-            value(ColorTheme.system.number, forKey: CDSemanticType.numeric.key)
-        }
-        
-        set {
-            setValue(newValue, forKey: CDSemanticType.numeric.key)
-        }
-    }
+    @ThemedColor(Theme.system.number, key: CDSemanticType.numeric.key)
+    var number: Color
     
     
-    var recordName: Color {
-        get {
-            value(ColorTheme.system.recordName, forKey: CDSemanticType.recordName.key)
-        }
-        
-        set {
-            setValue(newValue, forKey: CDSemanticType.recordName.key)
-        }
-    }
+    @ThemedColor(Theme.system.recordName, key: CDSemanticType.recordName.key)
+    var recordName: Color
     
     
-    var `class`: Color {
-        get {
-            value(ColorTheme.system.class, forKey: CDSemanticType.class.key)
-        }
-        
-        set {
-            setValue(newValue, forKey: CDSemanticType.class.key)
-        }
-    }
+    @ThemedColor(Theme.system.class, key: CDSemanticType.class.key)
+    var `class`: Color
     
     
-    var `protocol`: Color {
-        get {
-            value(ColorTheme.system.protocol, forKey: CDSemanticType.protocol.key)
-        }
-        
-        set {
-            setValue(newValue, forKey: CDSemanticType.protocol.key)
-        }
-    }
+    @ThemedColor(Theme.system.protocol, key: CDSemanticType.protocol.key)
+    var `protocol`: Color
     
     
     // The "SemanticOptimizedRun" class is switching on a "default" value, we have to provide a color for it.
-    var defaultValue: Color {
-        get {
-            value(ColorTheme.system.defaultValue, forKey: "default_color")
-        }
-        
-        set {
-            setValue(newValue, forKey: "default_color")
-        }
-    }
+    @ThemedColor(Theme.system.defaultValue, key: "default_color")
+    var defaultValue: Color
 }
 
-extension SemanticColor {
-    private func value(_ defaultValue: Color, forKey key: String) -> Color {
-        guard let hexValue = UserDefaults.standard.string(forKey: key)
-        else { return defaultValue }
-        
-        return Color(hex: hexValue)
-    }
-    
-    private func setValue(_ color: Color, forKey key: String) {
-        UserDefaults.standard.set(color.toHex(), forKey: key)
-    }
-}
 
 
 private extension CDSemanticType {
@@ -136,6 +61,30 @@ private extension CDSemanticType {
         case .protocol: return "protocol_color"
         
         default: return ""
+        }
+    }
+}
+
+
+@propertyWrapper
+struct ThemedColor {
+    private let defaultValue: Color
+    private let key: String
+
+    init(_ defaultValue: Color, key: String) {
+        self.defaultValue = defaultValue
+        self.key = key
+    }
+
+    var wrappedValue: Color {
+        get {
+            guard let hexValue = UserDefaults.standard.string(forKey: key)
+            else { return defaultValue }
+            
+            return Color(hex: hexValue)
+        }
+        set {
+            UserDefaults.standard.set(newValue.toHex(), forKey: key)
         }
     }
 }

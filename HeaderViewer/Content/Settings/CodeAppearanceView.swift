@@ -225,7 +225,7 @@ fileprivate struct ThemesContainerView: View {
                     
                     
                     Button("Default System", systemImage: "return") {
-                        codePreferences.apply(from: ColorTheme.system)
+                        codePreferences.apply(from: Theme.system)
                     }
                     .buttonStyle(ThemeButtonStyle(swiftColor))
                 }
@@ -236,15 +236,15 @@ fileprivate struct ThemesContainerView: View {
         }
     }
     
-    private var xcodeTheme: ColorTheme {
+    private var xcodeTheme: Theme {
         colorScheme == .dark ? .xcodeDark : .xcodeLight
     }
     
-    private var githubTheme: ColorTheme {
+    private var githubTheme: Theme {
         colorScheme == .dark ? .githubDark : .githubLight
     }
     
-    private var solarizedTheme: ColorTheme {
+    private var solarizedTheme: Theme {
         colorScheme == .dark ? .solarizedDark : .solarizedLight
     }
     

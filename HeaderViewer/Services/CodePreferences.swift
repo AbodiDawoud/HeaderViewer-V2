@@ -21,7 +21,7 @@ class CodePreferences: ObservableObject {
     let maxFontSize: Int = 24
     
     
-    func apply(from theme: ColorTheme) {
+    func apply(from theme: Theme) {
         self.colors.standard = theme.standard
         self.colors.comment = theme.comment
         self.colors.keyword = theme.keyword

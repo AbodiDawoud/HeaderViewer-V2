@@ -13,15 +13,16 @@ If you looking for macOS version, take a look at [RuntimeViewer](https://github.
 
 ## Features
 - New & Fresh UI
-- New history system
-- New settings system
+- New History system
+- New Bookmark system
 - Ability to adjust Code Appearance
-- Save/Share any class or protocol
+- Save/Share/Bookmark any class or protocol
 - New actions and menus
 - Improved project structure
 - Code clean up
 - Focused on iOS/iPadOS
-- Many more 
+- iOS 17+
+- And much more 
 
 
 ## Screenshots

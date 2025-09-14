@@ -40,9 +40,9 @@ struct ContentView: View {
 
 private struct _ContentView: View {
     private static let dscRootNode = CDUtilities.dyldSharedCacheImageRootNode
+    @State private var showBookmarksView: Bool = false
     @Binding var selectedObject: RuntimeObjectType?
     @StateObject private var viewModel = RuntimeObjectsViewModel()
-    
     
     var body: some View {
         NavigationStack {
@@ -68,22 +68,22 @@ private struct _ContentView: View {
                         }
                     }
                 }
+                
+                BookmarkCardView()
+                    .onTapGesture { showBookmarksView.toggle() }
             }
-            .navigationTitle("Header Viewer")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(.visible, for: .navigationBar)
+            .inlinedNavigationTitle("Header Viewer")
             .toolbar { toolbarContent }
             .navigationDestination(for: NamedNode.self) { namedNode in
                 if namedNode.isLeaf {
                     ImageRuntimeObjectsView(namedNode: namedNode, selection: $selectedObject)
-                        .onAppear {
-                            assignLeafNode(namedNode.name)
-                        }
+                        .onAppear { assignNodePath(namedNode.path) }
                 } else {
                     NamedNodeRow(node: namedNode)
                         .environmentObject(RuntimeListings.shared)
                 }
             }
+            .fullScreenCover(isPresented: $showBookmarksView, content: BookmarkListingView.init)
         }
     }
     
@@ -100,10 +100,8 @@ private struct _ContentView: View {
         }
     }
     
-    func assignLeafNode(_ node: String) {
-        if BookmarkManager.lastLeafNode == node { return }
-        
-        let suffix = node.hasSuffix(".dylib") ? "" : ".framework"
-        BookmarkManager.lastLeafNode = node + suffix
+    func assignNodePath(_ path: String) {
+        if BookmarkManager.lastNodePath == path { return }
+        BookmarkManager.lastNodePath = path
     }
 }

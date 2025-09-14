@@ -34,7 +34,7 @@ struct SettingsView: View {
                 }
                 .padding(.vertical, 1.5)
                 
-                Section {
+                Section("History") {
                     Toggle(
                         "History Enabled",
                         systemImage: "clock.arrow.circlepath",
@@ -64,15 +64,6 @@ struct SettingsView: View {
                             }
                         }
                     }
-                } header: {
-                    HStack {
-                        Text("History")
-                        Spacer()
-                        if !historyManager.isHistoryEmpty {
-                            HistoryClearButton()
-                                .imageScale(.large)
-                        }
-                    }
                 }
                 .padding(.vertical, 1.5)
                 
@@ -80,9 +71,7 @@ struct SettingsView: View {
                 CacheSection()
             }
             .buttonStyle(.plain)
-            .navigationTitle("Settings")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(.visible, for: .navigationBar)
+            .inlinedNavigationTitle("Settings")
             .fullScreenCover(isPresented: $showCodeAppearanceCover, content: CodeAppearanceView.init)
         }
     }

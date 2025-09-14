@@ -12,10 +12,14 @@
 		BD1C10E72E1D9FAD00810CB4 /* FiraCode-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD1C10E22E1D9FAD00810CB4 /* FiraCode-Regular.ttf */; };
 		BD1C10E82E1D9FAD00810CB4 /* ConsolaVD3-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD1C10E12E1D9FAD00810CB4 /* ConsolaVD3-Regular.ttf */; };
 		BD1C10E92E1D9FAD00810CB4 /* JetBrainsMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD1C10E32E1D9FAD00810CB4 /* JetBrainsMono-Regular.ttf */; };
+		BD240B342E6E4511005986E0 /* BookmarkListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD240B332E6E4511005986E0 /* BookmarkListing.swift */; };
+		BD240B362E6E4596005986E0 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD240B352E6E4596005986E0 /* Bookmark.swift */; };
+		BD240B382E6E4AE6005986E0 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD240B372E6E4AE6005986E0 /* ClearButton.swift */; };
+		BD240B3A2E6E56E7005986E0 /* BookmarkCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD240B392E6E56E7005986E0 /* BookmarkCardView.swift */; };
 		BD521C662E18AE33000F1E35 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD521C652E18AE33000F1E35 /* Theme.swift */; };
 		BD6D845B2E0B6D4500842F22 /* CodeAppearanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6D845A2E0B6D4500842F22 /* CodeAppearanceView.swift */; };
 		BD6D845D2E0B787400842F22 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD6D845C2E0B787400842F22 /* Colors.xcassets */; };
-		BD6D845F2E0BA54800842F22 /* IconicLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6D845E2E0BA54800842F22 /* IconicLabelStyle.swift */; };
+		BD6D845F2E0BA54800842F22 /* LabelStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6D845E2E0BA54800842F22 /* LabelStyles.swift */; };
 		BDA6F6BC2E08944500C000D6 /* RuntimeTypeSearchScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA6F6BB2E08944500C000D6 /* RuntimeTypeSearchScope.swift */; };
 		BDDD7E622E19F1FE0098A102 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD7E612E19F1FE0098A102 /* View+.swift */; };
 		BDDD7E642E19F7350098A102 /* SemanticColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD7E632E19F7350098A102 /* SemanticColor.swift */; };
@@ -62,10 +66,14 @@
 		BD1C10E22E1D9FAD00810CB4 /* FiraCode-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraCode-Regular.ttf"; sourceTree = "<group>"; };
 		BD1C10E32E1D9FAD00810CB4 /* JetBrainsMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JetBrainsMono-Regular.ttf"; sourceTree = "<group>"; };
 		BD1C10E42E1D9FAD00810CB4 /* Lilex-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lilex-Regular.ttf"; sourceTree = "<group>"; };
+		BD240B332E6E4511005986E0 /* BookmarkListing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkListing.swift; sourceTree = "<group>"; };
+		BD240B352E6E4596005986E0 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
+		BD240B372E6E4AE6005986E0 /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
+		BD240B392E6E56E7005986E0 /* BookmarkCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCardView.swift; sourceTree = "<group>"; };
 		BD521C652E18AE33000F1E35 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		BD6D845A2E0B6D4500842F22 /* CodeAppearanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeAppearanceView.swift; sourceTree = "<group>"; };
 		BD6D845C2E0B787400842F22 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		BD6D845E2E0BA54800842F22 /* IconicLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconicLabelStyle.swift; sourceTree = "<group>"; };
+		BD6D845E2E0BA54800842F22 /* LabelStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelStyles.swift; sourceTree = "<group>"; };
 		BDA6F6BB2E08944500C000D6 /* RuntimeTypeSearchScope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeTypeSearchScope.swift; sourceTree = "<group>"; };
 		BDDD7E612E19F1FE0098A102 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		BDDD7E632E19F7350098A102 /* SemanticColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticColor.swift; sourceTree = "<group>"; };
@@ -122,7 +130,8 @@
 			children = (
 				BDDD7E612E19F1FE0098A102 /* View+.swift */,
 				C02164CE2D658EC3007FB6E5 /* Color+.swift */,
-				BD6D845E2E0BA54800842F22 /* IconicLabelStyle.swift */,
+				BD6D845E2E0BA54800842F22 /* LabelStyles.swift */,
+				BD240B372E6E4AE6005986E0 /* ClearButton.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -138,6 +147,8 @@
 				FA9687F22B8433B900123476 /* SemanticStringView.swift */,
 				FA9687F02B8366B400123476 /* NamedNodeRow.swift */,
 				C0D81D312D6451F1005358AD /* HistoryView.swift */,
+				BD240B332E6E4511005986E0 /* BookmarkListing.swift */,
+				BD240B392E6E56E7005986E0 /* BookmarkCardView.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -161,6 +172,7 @@
 				BDA6F6BB2E08944500C000D6 /* RuntimeTypeSearchScope.swift */,
 				BD521C652E18AE33000F1E35 /* Theme.swift */,
 				BDDD7E632E19F7350098A102 /* SemanticColor.swift */,
+				BD240B352E6E4596005986E0 /* Bookmark.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -305,11 +317,14 @@
 				FA6BEDCB2BD5941500D20C6F /* RuntimeObjectsList.swift in Sources */,
 				BD05A3CB2E668DDB00FD2BFA /* BookmarManager.swift in Sources */,
 				FAAA8C0F2B85788700BD85B4 /* ImageRuntimeObjectsView.swift in Sources */,
+				BD240B362E6E4596005986E0 /* Bookmark.swift in Sources */,
 				BDDD7E622E19F1FE0098A102 /* View+.swift in Sources */,
 				C045C6AE2D8B85C2008682CE /* HistoryManager.swift in Sources */,
+				BD240B382E6E4AE6005986E0 /* ClearButton.swift in Sources */,
 				FA9687E92B8338E100123476 /* NamedNode.swift in Sources */,
 				FA9687F32B8433B900123476 /* SemanticStringView.swift in Sources */,
-				BD6D845F2E0BA54800842F22 /* IconicLabelStyle.swift in Sources */,
+				BD6D845F2E0BA54800842F22 /* LabelStyles.swift in Sources */,
+				BD240B3A2E6E56E7005986E0 /* BookmarkCardView.swift in Sources */,
 				C0D81D322D6451F1005358AD /* HistoryView.swift in Sources */,
 				FAAA8C132B857A1300BD85B4 /* RuntimeListings.swift in Sources */,
 				FA9687ED2B833C3200123476 /* RuntimeObjectDetail.swift in Sources */,
@@ -324,6 +339,7 @@
 				C045C6B02D8B86D7008682CE /* SettingsManager.swift in Sources */,
 				C0D81D372D645422005358AD /* RuntimeObjectsViewModel.swift in Sources */,
 				FA9687EB2B833C1700123476 /* RuntimeObjectType.swift in Sources */,
+				BD240B342E6E4511005986E0 /* BookmarkListing.swift in Sources */,
 				BD521C662E18AE33000F1E35 /* Theme.swift in Sources */,
 				BDA6F6BC2E08944500C000D6 /* RuntimeTypeSearchScope.swift in Sources */,
 				C02164D12D658F1D007FB6E5 /* CodePreferences.swift in Sources */,
@@ -481,7 +497,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.HeaderViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
@@ -525,7 +541,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.HeaderViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;

@@ -9,7 +9,7 @@ import ClassDumpRuntime
 
 
 struct RuntimeObjectDetail: View {
-    let type: RuntimeObjectType
+    private let type: RuntimeObjectType
     
     @SceneStorage("stripProtocolConformance") private var stripProtocolConformance: Bool = false
     @SceneStorage("stripOverrides") private var stripOverrides: Bool = false
@@ -19,6 +19,24 @@ struct RuntimeObjectDetail: View {
     
     @State private var showCodeAppearanceCover: Bool = false
     
+    init(type: RuntimeObjectType, parentPath: String? = nil) {
+        self.type = type
+        
+        guard let parentPath else { print("not valid parent path"); return }
+        let isLoaded = RuntimeListings.shared.isImageLoaded(path: parentPath)
+        
+        if isLoaded == false {
+            do {
+                try CDUtilities.loadImage(at: parentPath)
+                print("Loaded framework: \(parentPath)")
+            } catch {
+                print(error.localizedDescription)
+            }
+        } else {
+            print("Image not loaded for bookmark parent: \(String(describing: parentPath))")
+            print("Framework Path: \(parentPath), Is Loaded: \(isLoaded)")
+        }
+    }
     
     private var generationOptions: CDGenerationOptions {
         let options: CDGenerationOptions = .init()
@@ -55,9 +73,7 @@ struct RuntimeObjectDetail: View {
                 }
             }
         }
-        .navigationTitle(type.name)
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbarBackground(.visible, for: .navigationBar)
+        .inlinedNavigationTitle(type.name)
         .fullScreenCover(isPresented: $showCodeAppearanceCover, content: CodeAppearanceView.init)
         .toolbar {
             ToolbarItem(placement: .primaryAction) {

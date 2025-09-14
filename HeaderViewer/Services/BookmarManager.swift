@@ -8,8 +8,9 @@ import Foundation
 class BookmarkManager: ObservableObject {
     static let shared = BookmarkManager()
     
-    // keeps track of the last opened framework or dynamic library
-    static var lastLeafNode: String?
+    // keeps track of the last opened bundle or framework.
+    // This property will be tied to saved bookmarks for dynamic load later on.
+    static var lastNodePath: String?
     
     
     @Published var bookmarks: [Bookmark] = []
@@ -25,8 +26,8 @@ class BookmarkManager: ObservableObject {
     }
     
     func toggleBookmark(for imageName: String) {
-        guard let parent = BookmarkManager.lastLeafNode else { return }
-        let b = Bookmark(imageName: imageName, parentFramework: parent)
+        guard let parent = BookmarkManager.lastNodePath else { return }
+        let b = Bookmark(name: imageName, parentPath: parent, date: Date.now)
         
         if let index = bookmarks.firstIndex(of: b) {
             bookmarks.remove(at: index)
@@ -40,14 +41,21 @@ class BookmarkManager: ObservableObject {
     
     @discardableResult
     func addBookmark(imageName: String, parent: String) -> Int {
-        let newBookmark = Bookmark(imageName: imageName, parentFramework: parent)
-        bookmarks.append(newBookmark)
+        let newBookmark = Bookmark(name: imageName, parentPath: parent, date: Date.now)
+        bookmarks.insert(newBookmark, at: 0)
         syncBookmarks()
         return bookmarks.count - 1
     }
     
-    func removeBookmark(at index: Int) {
-        bookmarks.remove(at: index)
+    func removeBookmark(at index: IndexSet) {
+        for i in index {
+            bookmarks.remove(at: i)
+        }
+        syncBookmarks()
+    }
+    
+    func removeBookmark(for bookmark: Bookmark) {
+        bookmarks.removeAll { $0.name == bookmark.name && $0.parentPath == bookmark.parentPath }
         syncBookmarks()
     }
     
@@ -57,8 +65,8 @@ class BookmarkManager: ObservableObject {
     }
     
     func isBookmarked(_ imageName: String) -> Bool {
-        guard let parent = BookmarkManager.lastLeafNode else { return false }
-        return bookmarks.contains { $0.imageName == imageName && $0.parentFramework == parent }
+        guard let path = BookmarkManager.lastNodePath else { return false }
+        return bookmarks.contains { $0.name == imageName && $0.parentPath == path }
     }
     
     private func syncBookmarks() {
@@ -75,9 +83,8 @@ class BookmarkManager: ObservableObject {
         print("Bookmarks:")
         bookmarks.forEach { print($0) }
     }
-}
-
-struct Bookmark: Codable, Equatable {
-    let imageName: String
-    let parentFramework: String
+    
+    var isBookmarkEmpty: Bool {
+        return bookmarks.isEmpty
+    }
 }

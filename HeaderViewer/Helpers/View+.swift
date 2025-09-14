@@ -19,3 +19,12 @@ extension View {
         AnyView(modifier(self))
     }
 }
+
+extension View {
+    func inlinedNavigationTitle(_ title: String) -> some View {
+        self
+            .navigationTitle(title)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(.visible, for: .navigationBar)
+    }
+}
